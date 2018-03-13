@@ -6,13 +6,14 @@
     <body>
         <h1>All Students</h1>
         
-    	<div th:each="student,iterationStatus: ${students}">
+    	<div th:each="student,iterationStatus: ${students}" th:class="${iterationStatus.odd} ? 'odd'">
             <h3 th:text="'No. ' + ${iterationStatus.count}">No. 1</h3>
 	       	<h3 th:text="'NPM = ' + ${student.npm}">Student NPM</h3>
 	       	<h3 th:text="'Name = ' + ${student.name}">Student Name</h3>
 	       	<h3 th:text="'GPA = ' + ${student.gpa}">Student GPA</h3>
             <a th:href="'/student/delete/'+${student.npm}">Delete data</a>
             <a th:href="'/student/update/'+${student.npm}">Update data</a>
+            <h3 th:text="${student.gpa>=3.49} ? 'Cum Laude !' : 'Sangat Memuaskan !'"></h3>
 	       	<hr/>
        	</div>
     </body>
