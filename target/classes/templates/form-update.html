@@ -1,15 +1,10 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head>
 
-        <title>Update student</title>
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    </head>
+    <div th:replace="fragments/fragment :: header"></div>
 
     <body>
-        <div th:replace="fragments/fragment :: header"></div>
         <h1 class="page-header">Update Student</h1>
 
         <form action="/student/update/submit" th:object="${student}" method="post">
@@ -27,8 +22,9 @@
                 <button type="submit" name="action" value="update">Update</button>
             </div>
         </form>
-        <div th:replace="fragments/fragment :: footer"></div>
     </body>
+
+    <div th:replace="fragments/fragment :: footer"></div>
 
 </html>
 

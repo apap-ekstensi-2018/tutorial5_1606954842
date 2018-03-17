@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>View All Students</title>
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
-        <script type="text/javascript" charset="utf8" src="/js/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script>
-        <script>
-            $(document).ready( function () {
-                $('#tableStudent').DataTable();
-            } );
-        </script>
-    </head>
+
+    <div th:replace="fragments/fragment :: header"></div>
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#tableStudent').DataTable();
+        } );
+    </script>
     <body>
-        <div th:replace="fragments/fragment :: header"></div>
         <h4>All Students</h4>
         <table id="tableStudent" class="row-border hover stripe">
             <thead>
@@ -42,6 +39,7 @@
             </div>
             </tbody>
         </table>
-        <div th:replace="fragments/fragment :: footer"></div>
     </body>
+
+    <div th:replace="fragments/fragment :: footer"></div>
 </html>
