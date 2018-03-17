@@ -85,6 +85,11 @@ public class StudentController
         return "viewall";
     }
 
+    @RequestMapping("/data-source-student")
+    public String dataSourceStudent(){
+        return "test";
+    }
+
 
     @RequestMapping("/student/delete/{npm}")
     public String delete (Model model, @PathVariable(value = "npm") String npm)
