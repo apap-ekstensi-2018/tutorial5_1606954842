@@ -3,6 +3,8 @@ package com.example.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -91,6 +93,12 @@ public class StudentController
         return "viewall";
     }
 
+    @RequestMapping(value = "/student/data-all-student", method = RequestMethod.GET)
+    public ResponseEntity<List<StudentModel>> dataAllStudent(Model model){
+        List<StudentModel> students = studentDAO.selectAllStudents();
+        model.addAttribute("tittle","View All Student");
+        return new ResponseEntity<List<StudentModel>>(students, HttpStatus.OK);
+    }
 
     @RequestMapping("/student/delete/{npm}")
     public String delete (Model model, @PathVariable(value = "npm") String npm)

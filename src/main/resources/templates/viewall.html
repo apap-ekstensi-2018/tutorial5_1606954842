@@ -5,11 +5,7 @@
     <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready( function () {
-            $('#tableStudent').DataTable();
-        } );
-    </script>
+    <script type="text/javascript" charset="utf8" src="/js/data.js"></script>
     <body>
         <h4>All Students</h4>
         <table id="tableStudent" class="row-border hover stripe">
@@ -23,21 +19,6 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-            <div th:each="student,iterationStatus: ${students}" th:class="${iterationStatus.odd} ? 'odd'">
-                <tr>
-                    <td th:text="${iterationStatus.count}">No</td>
-                    <td th:text="${student.npm}">NPM</td>
-                    <td th:text="${student.name}">Name</td>
-                    <td th:text="${student.gpa}">GPA</td>
-                    <td th:text="${student.gpa>=3.49} ? 'Cum Laude !' : 'Sangat Memuaskan !'">Cum laude</td>
-                    <td>
-                        <a th:href="'/student/delete/'+${student.npm}"><button class="btn btn-danger btn-xs">Delete</button></a>
-                        <a th:href="'/student/update/'+${student.npm}"><button class="btn btn-info btn-xs">Update</button></a>
-                    </td>
-                </tr>
-            </div>
-            </tbody>
         </table>
     </body>
 
